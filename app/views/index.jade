@@ -1,0 +1,130 @@
+extends /layouts/_layout
+
+block content
+  .content
+    .topmenu
+      div.top-menu
+        div.pull-left
+          span
+            i.top-menu-icon.icon-time
+            span.timer 9:00    
+          span
+            i.top-menu-icon.icon-wallet
+            span.moneyspent 0    
+        div.pull-right
+          a(href="#0",class="action",data-action="openClientLog", title="Открыть лог клиентов")
+            i.top-menu-icon.icon-gear
+          a(href="#0",class="action",data-action="openPlayerStats", title="Открыть показатели игрока") 
+            i.top-menu-icon.icon-profile
+    .pure-g.mapholder
+      .pure-u-1
+        .map
+          .first-plan.mapper(style='z-index: 1;')
+            .second-plan.mapper(style='z-index: 2;')
+            .char-area.mapper(style='z-index: 3;')
+    .pure-g.bottommenu
+      .pure-u-1
+        .pure-menu.pure-menu-open.pure-menu-horizontal.zoneButtonsHolder
+          ul
+            li
+              a(href="#0",class="zone-action zone1-action action pure-button press-start", data-action="editDictionary") Изучить новые товары          
+            li
+              a(href="#0",class="zone-action zone5-action action pure-button", data-action="killEveryone") Действие зоны 5        
+            li
+              a(href="#0",class="zone-action zone2-action action pure-button press-start", data-action="merchendize") Привести расположение товаров в порядок    
+    .hidden-stuff
+      .level-result
+        h2 День успешно завершен
+        h3 Итак за сегодня:
+        .dayresults
+          ul
+            li 
+              .pure-g
+                .pure-u-1-2 Заработано
+                .pure-u-1-2.moneyspent 0 единиц
+            li 
+              .pure-g
+                .pure-u-1-2 Заработано опыта
+                .pure-u-1-2.experience 0
+            li 
+              .pure-g
+                .pure-u-1-2 Клиентов довольно:
+                .pure-u-1-2.happyClients 0
+            li 
+              .pure-g
+                .pure-u-1-2 Клиентов недовольно:
+                .pure-u-1-2.unhappyClients 0        
+        a(href="#0",class="action pure-button",data-action="startNextDay") Начать следующий день
+      
+      .clientlog-holder.dialog
+        .pure-g
+          .pure-u-2-5.clientlist
+          .pure-u-3-5
+            .dialog
+
+      .dictionary-holder
+
+      .cases-holder
+      .welcomeDisplay.center-text
+        h1 Салон "Иной Сеть"
+        h3.gray мини-игра салона продаж сотовой связи
+        h3 
+          a(href="#0",class="action press-start press-start-button",data-action="startGame") press start
+      .startDisplay.center-text
+        h1 Добро пожаловать
+        h2 
+          input(type="text", placeholder="пожалуйста представьтесь", name="username")
+        br
+        div Ваша задача за 3 дня совершить как минимум 15 продаж, изучить все доступные модели телефонов и получить выручку - как минимум 100 500 тысяч рублей.
+        br
+        div.center-text
+          a(href="#0",class="action pure-button press-start pure-button-primary",data-action="beginGame") начать свой первый день
+      .playerStats
+        ul.playerData
+          li 
+            .pure-g
+              .pure-u-1-2.property(title="Имя") Имя
+              .pure-u-1-2.name.playerstatvalue Игрок
+          li 
+            .pure-g
+              .pure-u-1-2.property Знания продуктов
+              .pure-u-1-2.productknowledge.playerstatvalue 3/4
+          li 
+            .pure-g
+              .pure-u-1-2.property Вежливость
+              .pure-u-1-2.status.playerstatvalue Новичок
+          li           
+            .pure-g
+              .pure-u-1-2.property Опыт
+              .pure-u-1-2.playerstatvalue
+                span.experience 0
+                span  очков
+          li 
+            .pure-g
+              .pure-u-1-2.property Заработано денег
+              .pure-u-1-2.playerstatvalue  
+                span.moneyspent 0                 
+                span  рублей
+          li 
+            .pure-g
+              .pure-u-1-2.property Всего обслужено клиентов
+              .pure-u-1-2.clients.playerstatvalue 0                        
+          li 
+            .pure-g
+              .pure-u-1-2.property Кол-во довольных клиентов
+              .pure-u-1-2.happyclients.playerstatvalue 0                         
+          li 
+            .pure-g
+              .pure-u-1-2.property Кол-во недовольных клиентов
+              .pure-u-1-2.unhappyclients.playerstatvalue 0                                                                                   
+          li 
+            .pure-g
+              .pure-u-1-2.property Коэфициент лояльности
+              .pure-u-1-2.loyalty.playerstatvalue 1
+      .theSettings
+        .pure-menu.pure-menu-open
+          ul
+            li
+              a(href="#0",class="action pure-button",data-action="") Включить подсказки         
+            li
+              a(href="#0",class="action pure-button",data-action="") Выход из игры

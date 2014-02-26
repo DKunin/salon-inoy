@@ -1,0 +1,29 @@
+<div class="dictionary-edit">  
+
+<div class="pure-g">
+  <div class="pure-u-2-5 ">
+    <h2>
+      <input class="filter-products" type="text" placeholder="Поиск по моделям"/>
+      
+    </h2>
+    <div class="modellist">
+      
+    </div>
+  </div>
+  
+  <div class="pure-u-3-5">
+
+    <div class="tech">
+      
+    </div>
+  </div>
+</div>          
+
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <% if (typeof(actions) != "undefined") { %>
+        <%_.each(actions,function(o,i){%>
+          <a class="action pure-button pure-button-primary" href="<%= o.action%>" data-action="<%= o.action%>" ><%= o.text%></a>
+        <%})%>
+      <% } %>
+</div>
+</div>

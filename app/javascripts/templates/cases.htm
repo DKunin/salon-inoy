@@ -1,0 +1,40 @@
+<div class="dialog-holder"> 
+  <div class="client-block pure-g">
+    <div class="logoholder pure-u-1-5">
+      <a class="showInfo">
+      <img src="/images/<%=code%>.jpg" alt="">
+      </a>
+    </div>
+    <div class="clienttalk pure-u-4-5">
+      <div class="text-holder">
+        <%= question%>
+      </div>
+      <div class="info-holder">
+        <i>
+          <%= customer.description%>
+        </i>
+      </div>
+    </div>
+  </div>
+
+  <div class="seller-block">
+    <ul class="answers">
+      <%_.each(answers,function(o,i){
+        if(typeof(o.hidden) == "undefined"){%>
+      <li class="nextsentence"
+          <% for(el in o.score) {%>
+            data-<%=el%>=<%=o.score[el]%>
+          <%}%>
+              data-code="<%= o.code%>" ><%= o.text%></li>
+      <%}})%>
+      <% if (typeof(actions) != "undefined") { %>
+      <%_.each(actions,function(o,i){%>
+       <a class="action" data-action="<%= o.action%>">
+          <%= o.text%>
+       </a>
+      <%})%>
+      <% } %>    
+    </ul>
+  </div>
+
+</div>

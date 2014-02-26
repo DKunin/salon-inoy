@@ -1,0 +1,13 @@
+# vendor/extensions dummy applications.
+
+# Node modules
+node_modules
+# Bower modules
+app/javascripts/lib/bower/
+vendor/assets/javascripts/b
+
+
+# Compiled assets
+app/assets/javascripts/compiled/*
+
+

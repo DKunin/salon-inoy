@@ -1,0 +1,31 @@
+<%var known = _.filter(merchandise,function(r){return r.known})%>
+	<%if(known.length>0){%>
+	<h4>
+		Известные модели:
+	</h4>
+	<ul class="dict-list pointer-list">
+	  <%_.each(known,function(o,i){ %>
+	  <li data-code="<%= o.code%>"><%= o.text%></li>
+	  <%})%>
+	</ul>
+	<%}%>
+<%var unknown = _.filter(merchandise,function(r){return !r.known})%>
+	<%if(unknown.length>0){%>
+	
+	<h4>Неизвестные модели:</h4>
+	<ul class="additional-list  pointer-list">
+	  <%_.each(unknown,function(o,i){ %>
+	  <li data-code="<%= o.code%>"><%= o.text%></li>
+	  <%})%>      
+	</ul>
+<%}%>
+<div class="total-list-info">
+	<%if(known.length>0||unknown.length>0){%>
+  <i>Известно моделей <%=known.length%> из <%=merchandise.length%></i>
+  <%}%>
+</div>
+<%if(merchandise.length===0){%>
+	<h5>
+		<i>Ничего не найдено</i>
+	</h5>
+<%}%>

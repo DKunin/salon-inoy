@@ -1,0 +1,24 @@
+.dialog-holder
+  .logoholder
+    border-radius: 5px 
+    overflow: hidden
+    img
+      width: 100%
+  h2
+    font-size: 1.2em
+  .clienttalk
+    font-size: 2em
+    .text-holder, .info-holder
+      padding: 20px 
+    .info-holder
+      display: none
+    &.show-info
+      .text-holder
+        display: none
+      .info-holder
+        display: block
+        
+    background-color: lighten(peter_river,25)
+  .answers
+    standartdialog()
+    max-height: 50%

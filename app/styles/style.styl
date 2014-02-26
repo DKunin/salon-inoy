@@ -1,0 +1,150 @@
+@import "_pure.css"
+@import "_colorbox.css"
+@import "_font-awesome.css"
+@import _nstyle
+@import _color
+@import _mixins
+@import _toastr
+@import _progressbar
+@import _dialog
+@import _thedictionary
+@import _clientlog
+@import _player-data
+@import _top-menu
+
+@font-face 
+  font-family: 'PTSans'
+  src: url('fonts/PT_Sans-Web-Regular.eot')
+  src: local('☺'), url('fonts/PT_Sans-Web-Regular.woff') format('woff'), url('fonts/PT_Sans-Web-Regular.ttf') format('truetype'), url('fonts/PT_Sans-Web-Regular.svg') format('svg')
+  font-weight: normal
+  font-style: normal
+
+body
+  background-color: #94be67
+  overflow: hidden
+
+.content
+  margin: 0 auto
+.btnTileset
+  border: 1px solid black
+  width: 120px
+  height: 30px
+  text-align: center
+  line-height: 30px
+  margin-top: 10px
+  color: white
+  position: absolute
+  top: 0
+  left: 0px
+  &:hover
+    cursor: pointer
+
+#tileset
+  width: 256px
+  height: 12000px
+  background: url(images/map.png)
+  display: none
+  margin: 0 auto
+  position: absolute
+  top: 45px
+  left: 0px
+
+.goto-tile
+  box-shadow: inset 0px 0px 10px 0px peter_river, inset 0px 0px 10px 0px peter_river  
+
+.hidden-stuff
+  display: none
+
+.char
+  &:before
+    content: "\f075"
+    font-family: FontAwesome
+    font-size: 30px
+    position: absolute
+    top: -15px
+    left: 14px
+    opacity: 0
+    transition(all .5s linear)
+    color: white
+    text-shadow: 0px 0px 5px black
+    padding: 5px
+    z-index: 9999
+.char.engaged
+  cursor: pointer
+  &:before
+    top: -25px
+    opacity: 1
+.zoneButtonsHolder
+  ul
+    li a
+      display: none
+    &.zone5
+      li a.zone5-action
+        display: block
+    &.zone1
+      li a.zone1-action
+        display: block
+    &.zone2
+      li a.zone2-action
+        display: block        
+
+.press-start
+  font-family: 'Conv_PressStart2P-Regular'
+.mapholder
+  min-height: 570px
+
+.topmenu, .mapholder, .bottommenu 
+  max-width: 770px 
+  margin: 0 auto
+
+
+.mapper
+  width: 32px*24 
+  position: absolute
+
+.tiletile
+  width: 32px
+  height: 32px
+  float: left
+  background-image: url(../images/shop1.png) 
+
+
+
+
+.pointer-list  
+  cursor: pointer
+
+.welcomeDisplay
+  font-family: 'Conv_PressStart2P-Regular'
+  h1
+    font-size: 2em
+.startDisplay
+  font-family: 'Conv_PressStart2P-Regular'
+  div
+    font-family: "PTSans"
+  input
+    width: 100%
+    text-align: center
+.center-text
+  text-align: center
+.gray
+  color: #c2c2c2
+.press-start-button
+  text-align: center
+  color: peter_river
+  text-decoration: none
+  animation: blink 1s infinite ease-in-out
+  font-size: 1.5em
+  margin-top: 20px
+  &:hover
+    animation: no 1s infinite ease-in-out
+
+
+@keyframes blink 
+  0% 
+    opacity: 1
+  50% 
+    opacity: 0
+  100% 
+    opacity: 1
+

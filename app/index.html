@@ -1,0 +1,174 @@
+
+<!--if IE 8<html class="lt-ie9">
+-->
+<!-- [if gt IE 8] <!-->
+<html lang="en">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8"/>
+    <title>Салон связи "Иной"</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+  </head>
+  <body>
+    <header></header>
+    <div class="content">
+      <div class="topmenu">
+        <div class="top-menu">
+          <div class="pull-left"><span><i class="top-menu-icon icon-time"></i><span class="timer">9:00    </span></span><span><i class="top-menu-icon icon-wallet"></i><span class="moneyspent">0    </span></span></div>
+          <div class="pull-right"><a href="#0" data-action="openClientLog" title="Открыть лог клиентов" class="action"><i class="top-menu-icon icon-gear"></i></a><a href="#0" data-action="openPlayerStats" title="Открыть показатели игрока" class="action"><i class="top-menu-icon icon-profile"></i></a></div>
+        </div>
+      </div>
+      <div class="pure-g mapholder">
+        <div class="pure-u-1">
+          <div class="map">
+            <div style="z-index: 1;" class="first-plan mapper">
+              <div style="z-index: 2;" class="second-plan mapper"></div>
+              <div style="z-index: 3;" class="char-area mapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pure-g bottommenu">
+        <div class="pure-u-1">
+          <div class="pure-menu pure-menu-open pure-menu-horizontal zoneButtonsHolder">
+            <ul>
+              <li><a href="#0" data-action="editDictionary" class="zone-action zone1-action action pure-button press-start">Изучить новые товары          </a></li>
+              <li><a href="#0" data-action="killEveryone" class="zone-action zone5-action action pure-button">Действие зоны 5        </a></li>
+              <li><a href="#0" data-action="merchendize" class="zone-action zone2-action action pure-button press-start">Привести расположение товаров в порядок    </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-stuff">
+        <div class="level-result">
+          <h2>День успешно завершен</h2>
+          <h3>Итак за сегодня:</h3>
+          <div class="dayresults">
+            <ul>
+              <li>
+                <div class="pure-g">
+                  <div class="pure-u-1-2">Заработано</div>
+                  <div class="pure-u-1-2 moneyspent">0 единиц</div>
+                </div>
+              </li>
+              <li>
+                <div class="pure-g">
+                  <div class="pure-u-1-2">Заработано опыта</div>
+                  <div class="pure-u-1-2 experience">0</div>
+                </div>
+              </li>
+              <li>
+                <div class="pure-g">
+                  <div class="pure-u-1-2">Клиентов довольно:</div>
+                  <div class="pure-u-1-2 happyClients">0</div>
+                </div>
+              </li>
+              <li>
+                <div class="pure-g">
+                  <div class="pure-u-1-2">Клиентов недовольно:</div>
+                  <div class="pure-u-1-2 unhappyClients">0        </div>
+                </div>
+              </li>
+            </ul>
+          </div><a href="#0" data-action="startNextDay" class="action pure-button">Начать следующий день</a>
+        </div>
+        <div class="clientlog-holder dialog">
+          <div class="pure-g">
+            <div class="pure-u-2-5 clientlist"></div>
+            <div class="pure-u-3-5">
+              <div class="dialog"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dictionary-holder"></div>
+        <div class="cases-holder"></div>
+        <div class="welcomeDisplay center-text">
+          <h1>Салон "Иной Сеть"</h1>
+          <h3 class="gray">мини-игра салона продаж сотовой связи</h3>
+          <h3><a href="#0" data-action="startGame" class="action press-start press-start-button">press start</a></h3>
+        </div>
+        <div class="startDisplay center-text">
+          <h1>Добро пожаловать</h1>
+          <h2>
+            <input type="text" placeholder="пожалуйста представьтесь" name="username"/>
+          </h2><br/>
+          <div>Ваша задача за 3 дня совершить как минимум 15 продаж, изучить все доступные модели телефонов и получить выручку - как минимум 100 500 тысяч рублей.</div><br/>
+          <div class="center-text"><a href="#0" data-action="beginGame" class="action pure-button press-start pure-button-primary">начать свой первый день</a></div>
+        </div>
+        <div class="playerStats">
+          <ul class="playerData">
+            <li>
+              <div class="pure-g">
+                <div title="Имя" class="pure-u-1-2 property">Имя</div>
+                <div class="pure-u-1-2 name playerstatvalue">Игрок</div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Знания продуктов</div>
+                <div class="pure-u-1-2 productknowledge playerstatvalue">3/4</div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Вежливость</div>
+                <div class="pure-u-1-2 status playerstatvalue">Новичок</div>
+              </div>
+            </li>
+            <li>          
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Опыт</div>
+                <div class="pure-u-1-2 playerstatvalue"><span class="experience">0</span><span> очков</span></div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Заработано денег</div>
+                <div class="pure-u-1-2 playerstatvalue"> <span class="moneyspent">0                 </span><span> рублей</span></div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Всего обслужено клиентов</div>
+                <div class="pure-u-1-2 clients playerstatvalue">0                        </div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Кол-во довольных клиентов</div>
+                <div class="pure-u-1-2 happyclients playerstatvalue">0                         </div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Кол-во недовольных клиентов</div>
+                <div class="pure-u-1-2 unhappyclients playerstatvalue">0                                                                                   </div>
+              </div>
+            </li>
+            <li>
+              <div class="pure-g">
+                <div class="pure-u-1-2 property">Коэфициент лояльности</div>
+                <div class="pure-u-1-2 loyalty playerstatvalue">1</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="theSettings">
+          <div class="pure-menu pure-menu-open">
+            <ul>
+              <li><a href="#0" data-action="" class="action pure-button">Включить подсказки         </a></li>
+              <li><a href="#0" data-action="" class="action pure-button">Выход из игры</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")-->
+    <!--script(src="bower/tiny-emitter/dist/tinyemitter.min.js")-->
+    <!--script(src="js/main.js")-->
+    <!--script(src="javascripts/lib/bower/requirejs/require.js",data-main="javascripts/compiled/compiled")-->
+    <script src="javascripts/lib/bower/requirejs/require.js" data-main="javascripts/config-dev"></script>
+  </body>
+</html>

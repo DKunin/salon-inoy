@@ -1,0 +1,16 @@
+<ul сlass="dialog">
+  <% _.each(dialog.logs,function(d){%>
+    
+    <li class="sellerspeech"><span>
+      <%=d.yousaid%>
+    </span>
+  	</li>
+    <%if(d.custsaid!="") {%>
+    <li class="clientsp">
+      <span>
+      <%=d.custsaid%>
+    </span>
+  	</li>
+    <%}%>
+  <%})%>
+</ul>

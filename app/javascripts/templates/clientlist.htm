@@ -1,0 +1,9 @@
+<ul сlass="clients">
+  <% _.each(clients,function(d){%>
+  	<li data-code="<%=d.code%>"><%=d.name%></li>
+  <%})%>
+  <% if(clients.length===0) {%>
+  	<i>Пока не было обслужанных клиентов</i>
+  <%}%>
+</ul>
+

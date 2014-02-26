@@ -1,0 +1,15 @@
+<h2><%=text%></h2>
+    <div class="phone-image">
+    	<img src="/images/<%=code%>.jpg" alt="">
+    </div>
+    <ul class="tech-data-list">
+    	
+<%_.each(techdata,function(o,i){ %>
+  <li data-code="<%= o.code%>">
+  	<%= o.name%>: <%= o.value%><%if(o.code==="price"){%> р.<%}%></li>
+<%})%>
+    </ul>
+
+<%if(!known){%>
+  <a class="action pure-button pure-button-primary" data-action="learnDevice" data-code="<%=code%>">Запомнить товар (проверить свои знание)</a>
+<%}%>

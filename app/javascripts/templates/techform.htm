@@ -1,0 +1,45 @@
+<h2>
+  <%=text%>
+</h2>
+<form class="action" data-action="submitForm">
+  
+  <input type="hidden" name="code" value="<%=code%>">    
+<ul class="techForm">
+	
+<%_.each(questions , function(o,ind){ %>
+  <li>
+	<%if(o.type==="text"){%>
+    <label for="<%=o.code%>">
+      <%=o.text%> :
+    </label><br>
+    <input type="<%=o.type%>" name="<%=o.code%>">    
+	<%}%>
+	<%if(o.type==="choice"){%>
+    <label for="<%=o.code%>">
+      <%=o.text%> :
+    </label><br>
+    <select type="<%=o.type%>" name="<%=o.code%>">
+		<%var options = _.uniq(_.map(merchandise,function(merch){
+			return _.find(merch.techdata, function(td){return td.code ===o.code})
+		}), function(un){return un.value})%>
+		<%for(var i=0,l=options.length;i<l;i++){%>
+			<option value="<%=options[i].value%>"><%=options[i].value%></option>
+		<%}%>
+	</select>    
+	<%}%>
+	<%if(o.type==="range"){%>
+    <label for="<%=o.code%>">
+      <%=o.text%> :
+    </label><br>
+	<input id="rangeValue<%=ind%>" name="<%=o.code%>" type="text" size="3" value="5000"> 
+	<input class="range-slider" id="slider<%=ind%>" type="range" min="5000" max="25000" step="1000" value="5000" onchange="printValue('slider<%=ind%>','rangeValue<%=ind%>')">
+	<%}%>	
+  </li>
+  
+<%})%>
+</ul>
+<br>
+ <button type="submit" class="pure-button pure-button-primary">Проверить свои ответы</button>
+</form>
+
+
