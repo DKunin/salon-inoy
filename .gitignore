@@ -8,6 +8,6 @@ vendor/assets/javascripts/b
 
 
 # Compiled assets
-app/assets/javascripts/compiled/*
+app/javascripts/compiled/*
 
 
