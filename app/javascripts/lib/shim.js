@@ -1,9 +1,11 @@
-define(["lib/bower/toastr/toastr.min",
+define([
+  "lib/bower/toastr/toastr.min",
   "lib/pathfinding-browser.min"
   ],function(Toastr, PathFind){
     window.toastr = Toastr;
-  	window.PF = PathFind;
-   	window.Finder = new PathFind.BestFirstFinder();
+
+   window.PF = PathFind;
+   window.Finder = new PathFind.BestFirstFinder();
    	function printValue(sliderID, textbox) {
             var x = document.getElementById(textbox);
             var y = document.getElementById(sliderID);

@@ -24,6 +24,7 @@ define(
   "component_ui/client-logs-ui",
   "lib/shim",
   "lib/bower/jquery-colorbox/jquery.colorbox-min"
+  //"lib/pathfinding-browser.min"
   ],
   function() {
     setTimeout(function(){
@@ -87,12 +88,11 @@ define(
     arguments[20].attachTo(document);
     //arguments[22].attachTo(document);
     arguments[21].attachTo(".clientlog-holder");
-
     //toastr.options.showMethod = 'slideUp'; 
     //toastr.options.showEasing = 'easeOutBounce';
-    toastr.options.hideMethod = 'fadeOut'; 
-    toastr.options.positionClass = 'toast-top-full-width'; 
-    toastr.options.showMethod = 'slideDown'; 
+    //toastr.options.hideMethod = 'fadeOut'; 
+    //toastr.options.positionClass = 'toast-top-full-width'; 
+    //toastr.options.showMethod = 'slideDown'; 
 
     $(document).trigger("remoteAction",{action:"openWelcomeScreen"});
     $(document).trigger('startLevel', {level:1})
