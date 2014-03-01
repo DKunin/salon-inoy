@@ -18,7 +18,6 @@ define(['flight/lib/component','settings/map','settings/cases'],function (define
             var cod = this.id;
             $(document).trigger('removeNPCFromMap',{code:cod});
             if(storm) {
-              console.log("charecter should go away")
                $(document).trigger("remoteAction",{action:"stormOut",code:this.id});
             };
         },
@@ -36,7 +35,7 @@ define(['flight/lib/component','settings/map','settings/cases'],function (define
         },  
         setTimer: function(){
           this.paused = false;
-          this.interval = setInterval(this.timer.bind(this),1000);
+          //this.interval = setInterval(this.timer.bind(this),1000);
         },
         pause: function(){
           clearInterval(this.interval);

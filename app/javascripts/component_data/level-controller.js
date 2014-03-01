@@ -13,6 +13,7 @@ define(['flight/lib/component'],function (defineComponent,template) {
     this.enterCustomer = function(name,pos){
       this.trigger(document, 'createChar',{id: name , pos:pos, bg: 'images/customer-sprite.png'});
     };
+
     var times=[];
     var minutes = ["00","10","20","30","40","50"];
     for(var i=9,l=18;i<l;i++) {
@@ -24,9 +25,12 @@ define(['flight/lib/component'],function (defineComponent,template) {
     this.levelCycle = function(){
       if(!this.attr.second){
         this.attr.second = 0;
+        this.attr.realsecond = 0;
         this.attr.timeshown = 1;
       }; 
       this.attr.second++;
+      this.attr.realsecond++;
+      console.log(this.attr.realsecond);21
       this.attr.curLevel.events[this.attr.second]&&this.attr.curLevel.events[this.attr.second].bind(this)();
       if(this.attr.second===15) {
         this.attr.second = 1;
@@ -40,12 +44,12 @@ define(['flight/lib/component'],function (defineComponent,template) {
 
     this.startLevelTimer = function(){
       this.attr.timer = setInterval(this.levelCycle.bind(this),1000);
-
     };
+
     this.initLevel = function(e,obj) {      
       var levelTostart = levels[obj.level];
       this.attr.curLevel = levelTostart;
-      this.startLevelTimer();
+      //this.startLevelTimer();
     };
     this.loadCustomer = function(e, obj){
       this.enterCustomer(obj.id,obj.coord);
@@ -55,8 +59,9 @@ define(['flight/lib/component'],function (defineComponent,template) {
         name: "Level1",
         namer: "1-ый день",
         events: {
-          //1: function(){this.enterCustomer('customer',[5,5])},
-          6000: this.finishLevel
+          5: function(){this.enterCustomer('customer',[8,8])},
+          40: function(){this.enterCustomer('customer2',[6,5])},
+          600: this.finishLevel
         }
 
       }

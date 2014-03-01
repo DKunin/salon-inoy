@@ -10,7 +10,7 @@ define([],function($){
           understanding: 5
         },
         options: {
-          patience: 45,
+          patience: 60,
           smartphone:true,
           acceptablemodels: {
             htc:{
@@ -104,7 +104,7 @@ define([],function($){
           understanding: 5
         },
         options: {
-          patience: 30,
+          patience: 70,
           smartphone:true,
           acceptablemodels: {
             sony:{

@@ -57,6 +57,7 @@ define(['flight/lib/component'],function (defineComponent) {
      var name = $('[name=username]').val();
      $('.playerData .name').empty().append(name);
      toastr.info(name+', добро пожаловть в салон связи "Иной Сеть"');
+     this.trigger(document,'startLevel', {level:1});
     };    
     
     this.openPlayerStats = function(){

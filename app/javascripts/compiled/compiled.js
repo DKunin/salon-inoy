@@ -1,4 +1,4 @@
-/*! foivadmin - v0.1.3 - 2014-02-28
+/*! foivadmin - v0.1.3 - 2014-03-01
 * Copyright (c) 2014 ; Licensed  */
 /*jslint regexp: true */
 /*global require, XMLHttpRequest, ActiveXObject,
@@ -9753,7 +9753,7 @@ define('component_ui/cases',['flight/lib/component'],function (defineComponent) 
 });
 
 
-define('component_ui/actionDispatcher',['flight/lib/component'],function (defineComponent) {
+define('component_ui/action-dispatcher',['flight/lib/component'],function (defineComponent) {
   
   
   function ActionDispatcher() {
@@ -9812,6 +9812,7 @@ define('component_ui/actionDispatcher',['flight/lib/component'],function (define
      var name = $('[name=username]').val();
      $('.playerData .name').empty().append(name);
      toastr.info(name+', добро пожаловть в салон связи "Иной Сеть"');
+     this.trigger(document,'startLevel', {level:1});
     };    
     
     this.openPlayerStats = function(){
@@ -9939,7 +9940,7 @@ define('component_ui/actionDispatcher',['flight/lib/component'],function (define
 });
 
 
-define('component_ui/modalController',['flight/lib/component'],function (defineComponent) {
+define('component_ui/modal-controller',['flight/lib/component'],function (defineComponent) {
   
   
   function ModalController() {
@@ -9984,7 +9985,7 @@ define('component_ui/modalController',['flight/lib/component'],function (defineC
 });
 
 
-define('component_data/playerStatsData',['flight/lib/component'],function (defineComponent) {
+define('component_data/player-stats-data',['flight/lib/component'],function (defineComponent) {
   
   
   function PlayerStatsData() {
@@ -10032,7 +10033,7 @@ define('component_data/playerStatsData',['flight/lib/component'],function (defin
 });
 
 
-define('component_ui/playerStatsUi',['flight/lib/component'],function (defineComponent) {
+define('component_ui/player-stats-ui',['flight/lib/component'],function (defineComponent) {
   
   
   function PlayerStatsUi() {
@@ -10466,7 +10467,7 @@ define('component_data/dictionary-data',['flight/lib/component','text!templates/
 });
 
 
-define('component_ui/dictionaryUi',['flight/lib/component'],function (defineComponent) {
+define('component_ui/dictionary-ui',['flight/lib/component'],function (defineComponent) {
   
   
   function DictionaryUi() {
@@ -10568,6 +10569,7 @@ define('component_data/level-controller',['flight/lib/component'],function (defi
     this.enterCustomer = function(name,pos){
       this.trigger(document, 'createChar',{id: name , pos:pos, bg: 'images/customer-sprite.png'});
     };
+
     var times=[];
     var minutes = ["00","10","20","30","40","50"];
     for(var i=9,l=18;i<l;i++) {
@@ -10595,8 +10597,8 @@ define('component_data/level-controller',['flight/lib/component'],function (defi
 
     this.startLevelTimer = function(){
       this.attr.timer = setInterval(this.levelCycle.bind(this),1000);
-
     };
+    
     this.initLevel = function(e,obj) {      
       var levelTostart = levels[obj.level];
       this.attr.curLevel = levelTostart;
@@ -10915,12 +10917,12 @@ define(
   "component_ui/charecter",
   "component_data/cases-data",
   "component_ui/cases",
-  "component_ui/actionDispatcher",
-  "component_ui/modalController",
-  "component_data/playerStatsData",
-  "component_ui/playerStatsUi",
+  "component_ui/action-dispatcher",
+  "component_ui/modal-controller",
+  "component_data/player-stats-data",
+  "component_ui/player-stats-ui",
   "component_data/dictionary-data",
-  "component_ui/dictionaryUi",
+  "component_ui/dictionary-ui",
   "component_data/level-controller",
   "component_data/progress-bar-controller",
   "component_ui/top-menu-ui",
@@ -10991,16 +10993,10 @@ define(
     arguments[19].attachTo('.level-result');
 
     arguments[20].attachTo(document);
-    //arguments[22].attachTo(document);
     arguments[21].attachTo(".clientlog-holder");
-    //toastr.options.showMethod = 'slideUp'; 
-    //toastr.options.showEasing = 'easeOutBounce';
-    //toastr.options.hideMethod = 'fadeOut'; 
-    //toastr.options.positionClass = 'toast-top-full-width'; 
-    //toastr.options.showMethod = 'slideDown'; 
 
     $(document).trigger("remoteAction",{action:"openWelcomeScreen"});
-    $(document).trigger('startLevel', {level:1})
+    
     $(document).trigger('createChar',{id:'main',pos:[8,8]});
 
     var zoneBtnsHolder = $('.zoneButtonsHolder ul');
